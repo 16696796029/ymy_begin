@@ -1,0 +1,15 @@
+# ymy_begin
+to practice python
+
+# Ackermann函数
+m = float(input("请输入一个数字："))
+n = float(input("请输入一个数字："))
+def acker(m, n):
+    if m == 0:
+        return n+1
+    if n == 0:
+        return acker(m-1, 1)
+    return acker(m-1, acker(m, n-1))
+
+# arc(3,4)
+print(acker(m, n))
