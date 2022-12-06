@@ -1,0 +1,56 @@
+文章：
+Youth is not a time of life; it is a state of mind; it is not a matter of rosy cheeks, red lips and supple knees; it is a matter of the will, a quality of the imagination, a vigor of the emotions; it is the freshness of the deep springs of life.
+
+Youth means a temperamental predominance of courage over timidity, of the appetite for adventure over the love of ease. This often exists in a man of 60 more than a boy of 20. Nobody grows old merely by a number of years. We grow old by deserting our ideals.
+
+Years may wrinkle the skin, but to give up enthusiasm wrinkles the soul. Worry, fear, self-distrust bows the heart and turns the spirit back to dust.
+
+Whether 60 or 16, there is in every human being’s heart the lure of wonders, the unfailing appetite for what’s next and the joy of the game of living. In the center of your heart and my heart, there is a wireless station; so long as it receives messages of beauty, hope, courage and power from man and from the infinite, so long as you are young.
+
+When your aerials are down, and your spirit is covered with snows of cynicism and the ice of pessimism, then you’ve grown old, even at 20; but as long as your aerials are up, to catch waves of optimism, there’s hope you may die young at 80.
+
+
+# 方法一：
+
+a = open('text.txt').read()
+a = a.lower()
+for c in ';,:./?!' :
+    a = a.replace(c,'')
+a = a.replace('\n','') 
+a = a.split()
+a.sort()
+d = dict()
+for x in a :
+    if x not in d:
+        d[x] = 1
+    else:
+        d[x] += 1
+print(d)
+
+    
+# 方法二：
+
+a = open('text.txt').read()
+a = a.lower()
+b = a.replace(',./!;:',' ')
+t = b.split()
+t.sort()
+alphabet = []
+count = [0]
+i = 0
+for x in t:
+    if x in alphabet:
+        count[i] = count[i]+1                                                     
+    else:
+        alphabet.append(x) 
+        count.append(1)
+        i = i+1
+del count[0]
+print(alphabet)
+print(count)
+
+方法一结果：
+{'16': 1, '20': 2, '60': 2, '80': 1, 'a': 11, 'adventure': 1, 'aerials': 2, 'and': 8, 'appetite': 2, 'are': 3, 'as': 4, 'at': 2, 'back': 1, 'beauty': 1, 'being’s': 1, 'bows': 1, 'boy': 1, 'but': 2, 'by': 2, 'catch': 1, 'center': 1, 'cheeks': 1, 'courage': 2, 'covered': 1, 'cynicism': 1, 'deep': 1, 'deserting': 1, 'die': 1, 'down': 1, 'dust': 1, 'ease': 1, 'emotions': 1, 'enthusiasm': 1, 'even': 1, 'every': 1, 'exists': 1, 'fear': 1, 'for': 2, 'freshness': 1, 'from': 2, 'game': 1, 'give': 1, 'grow': 1, 'grown': 1, 'grows': 1, 'heart': 4, 'hope': 2, 'human': 1, 'ice': 1, 'ideals': 1, 'imagination': 1, 'in': 3, 'infinite': 1, 'is': 8, 'it': 5, 'joy': 1, 'knees': 1, 'life': 2, 'lips': 1, 'living': 1, 'long': 3, 'love': 1, 'lure': 1, 'man': 2, 'matter': 2, 'may': 2, 'means': 1, 'merely': 1, 'messages': 1, 'mind': 1, 'more': 1, 'my': 1, 'next': 1, 'nobody': 1, 'not': 2, 'number': 1, 'of': 22, 'often': 1, 'old': 3, 'optimism': 1, 'or': 1, 'our': 1, 'over': 2, 'pessimism': 1, 'power': 1, 'predominance': 1, 'quality': 1, 'receives': 1, 'red': 1, 'rosy': 1, 'self-distrust': 1, 'skin': 1, 'snows': 1, 'so': 2, 'soul': 1, 'spirit': 2, 'springs': 1, 'state': 1, 'station': 1, 'supple': 1, 'temperamental': 1, 'than': 1, 'the': 18, 'then': 1, 'there': 2, 'there’s': 1, 'this': 1, 'time': 1, 'timidity': 1, 'to': 3, 'turns': 1, 'unfailing': 1, 'up': 2, 'vigor': 1, 'waves': 1, 'we': 1, 'what’s': 1, 'when': 1, 'whether': 1, 'will': 1, 'wireless': 1, 'with': 1, 'wonders': 1, 'worry': 1, 'wrinkle': 1, 'wrinkles': 1, 'years': 2, 'you': 2, 'young': 2, 'your': 4, 'youth': 2, 'you’ve': 1}
+方法二结果：
+['16,', '20.', '20;', '60', '80.', 'a', 'adventure', 'aerials', 'and', 'appetite', 'are', 'as', 'at', 'back', 'beauty,', 'being’s', 'bows', 'boy', 'but', 'by', 'catch', 'center', 'cheeks,', 'courage', 'covered', 'cynicism', 'deep', 'deserting', 'die', 'down,', 'dust.', 'ease.', 'emotions;', 'enthusiasm', 'even', 'every', 'exists', 'fear,', 'for', 'freshness', 'from', 'game', 'give', 'grow', 'grown', 'grows', 'heart', 'heart,', 'hope', 'hope,', 'human', 'ice', 'ideals.', 'imagination,', 'in', 'infinite,', 'is', 'it', 'joy', 'knees;', 'life.', 'life;', 'lips', 'living.', 'long', 'love', 'lure', 'man', 'matter', 'may', 'means', 'merely', 'messages', 'mind;', 'more', 'my', 'next', 'nobody', 'not', 'number', 'of', 'often', 'old', 'old,', 'optimism,', 'or', 'our', 'over', 'pessimism,', 'power', 'predominance', 'quality', 'receives', 'red', 'rosy', 'self-distrust', 'skin,', 'snows', 'so', 'soul.', 'spirit', 'springs', 'state', 'station;', 'supple', 'temperamental', 'than', 'the', 'then', 'there', 'there’s', 'this', 'time', 'timidity,', 'to', 'turns', 'unfailing', 'up', 'up,', 'vigor', 'waves', 'we', 'what’s', 'when', 'whether', 'will,', 'wireless', 'with', 'wonders,', 'worry,', 'wrinkle', 'wrinkles', 'years', 'years.', 'you', 'young', 'young.', 'your', 'youth', 'you’ve']
+[1, 1, 1, 2, 1, 11, 1, 2, 8, 2, 3, 4, 2, 1, 1, 1, 1, 1, 2, 2, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 3, 1, 8, 5, 1, 1, 1, 1, 1, 1, 3, 1, 1, 2, 2, 2, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 22, 1, 2, 1, 1, 1, 1, 2, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 2, 1, 1, 1, 1, 1, 1, 18, 1, 2, 1, 1, 1, 1, 3, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 2, 1, 1, 4, 2, 1]
